@@ -1,0 +1,33 @@
+{
+  "name": "igtools",
+  "version": "1.0.0",
+  "description": "Tools for Instagram automation",
+  "main": "index.js",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "chromedriver": "^87.0.4",
+    "express": "^4.17.1",
+    "mocha": "^8.2.1",
+    "selenium-webdriver": "^4.0.0-alpha.8",
+    "tools-for-instagram": "^1.8.11"
+  },
+  "devDependencies": {
+    "protractor-cucumber-framework": "^6.2.1"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shiveshnavin/socialtools.git"
+  },
+  "keywords": [
+    "instagram"
+  ],
+  "author": "Shivesh Navin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shiveshnavin/socialtools/issues"
+  },
+  "homepage": "https://github.com/shiveshnavin/socialtools#readme"
+}
