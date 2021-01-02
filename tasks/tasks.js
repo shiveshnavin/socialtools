@@ -3,13 +3,15 @@ const fetch = require('node-fetch');
 
 var ig;
 var info;
-(async () => {
+// (async () => {
 
-    ig = await login();
-    info = await getUserInfo(ig, "Instagram");
-    console.log("User information, username: " + info.username);
+//     ig = await login({
+//         inputLogin
+//     });
+//     info = await getUserInfo(ig, "Instagram");
+//     console.log("User information, username: " + info.username);
 
-})();
+// })();
 
 
 
@@ -33,6 +35,14 @@ async function getUserRecentPostsAll(ig, username) {
 module.exports = function () {
     var module = {};
 
+    module.login = async function (username,paswd) {
+        ig = await login({
+            inputLogin:username,
+            inputPassword:paswd
+        });
+        info = await getUserInfo(ig, "Instagram");
+        console.log("User information, username: " + info.username);
+    }
     module.likeAllPosts = async function (username, res) {
 
         var posts = await getUserRecentPostsAll(ig, username)
@@ -52,7 +62,8 @@ module.exports = function () {
             // if (post.caption)
             //     res.write(`liked ${post.caption.text}<br>\n`)
             // else
-            res.write(`liked ${post.code} ${i+1}/${posts.length}\n`)
+            res.write(`liked ${post.code} ${i + 1}/${posts.length}\n`)
+            break;
 
         }
         console.log('liked ', noPostsLiked, ' posts')

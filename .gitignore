@@ -4,3 +4,6 @@ build
 *.jpg
 .env
 .DS_Store
+
+db/
+cookies/
