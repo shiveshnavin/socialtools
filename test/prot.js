@@ -1,6 +1,9 @@
 const { Builder, By, Key, until } = require('selenium-webdriver');
 require('chromedriver');
-
+var webdriver2 = require('selenium-webdriver');
+var driver2 = new webdriver2.Builder()
+  .forBrowser('chrome')
+  .build();
 
 
 async function sleep(timems) {
