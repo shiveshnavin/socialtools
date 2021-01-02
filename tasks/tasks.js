@@ -63,7 +63,7 @@ module.exports = function () {
             //     res.write(`liked ${post.caption.text}<br>\n`)
             // else
             res.write(`liked ${post.code} ${i + 1}/${posts.length}\n`)
-            break;
+            // break;
 
         }
         console.log('liked ', noPostsLiked, ' posts')
