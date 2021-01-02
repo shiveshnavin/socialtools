@@ -3,7 +3,6 @@ require('chromedriver');
 var webdriver = require('selenium-webdriver');
 var chromedriver = require('chromedriver');
 var binPath = chromedriver.path;
-console.log(binPath)
 
 async function sleep(timems) {
     await new Promise(resolve => setTimeout(resolve, timems));
@@ -14,10 +13,12 @@ module.exports = function (username, paswd) {
     var module = {};
     type = "submit"
     module.login = async function () {
-        let driver = new webdriver2.Builder()
+        console.log(binPath) 
+        let driver = new webdriver.Builder()
             .forBrowser('chrome')
             .build();
         try {
+
             await driver.get('http://instagram.com/accounts/login');
             var usernQ = await driver.wait(until.elementLocated(By.name('username')));
             await usernQ.sendKeys(username);
